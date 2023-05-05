@@ -7,6 +7,7 @@ const Employee = require('./models/employee')
 const async = require('async')
 const employee = require('./models/employee')
 const app = express()
+app.use(cors())
 require('dotenv').config()
 const CONNECTION_URL = process.env.CONNECTION_URL 
 const upload = multer({dest : 'uploads/'})
