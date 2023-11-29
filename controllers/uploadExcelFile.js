@@ -30,6 +30,7 @@ const uploadExcelFile = async (req, res) => {
         try{
             // Bad Request
             if(!req.file) return res.status(400).json({mesage : 'Please Upload File Before Submitting...'})
+            console.log(req.file)
             const workbook = xlsx.readFile(req.file.path)
             const sheetName = workbook.SheetNames[0];
             const workSheet = workbook.Sheets[sheetName];
