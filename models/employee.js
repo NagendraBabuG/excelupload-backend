@@ -1,45 +1,49 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const employeeSchema = new mongoose.Schema({
-  name: {
+  'Name of the Candidate': {
     type: String,
     required: true
   },
-  email: {
+  'Email': {
     type: String,
     unique: true,
     required: true
   },
-  dob: {
+  'Mobile No.': {
     type: String,
     required: true
   },
-  mobile: {
+  'Date of Birth': {
     type: String,
     required: true
   },
-  experience: {
+  'Work Experience': {
     type: String,
     required: true
   },
-  resumeTitle: {
+  'Resume Title': {
     type: String,
     required: true
   },
-  currentLocation: {
+  'Current Location': {
+    type: String,
+    required : true
+  },
+  'Postal Address': {
+    type: String,
+    required : true
+  },
+  'Current Employer': {
     type: String
   },
-  PostalAddress: {
-    type: String
-  },
-  currentEmployeer: {
-    type: String
-  },
-  currentDesignation: {
+  'Current Designation': {
     type: String
   }
-}, { timestamps: true });
-employeeSchema.index({ email: 1 }, { unique: true });
-const Employee = mongoose.model('Employee', employeeSchema);
+}, { timestamps: true })
 
-module.exports = Employee;
+
+
+const Employee = mongoose.model('Employee', employeeSchema)
+
+module.exports = Employee
