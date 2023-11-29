@@ -43,6 +43,7 @@ const uploadExcelFile = async (req, res) => {
         catch(error)
         {
             //Internal Error
+            console.log('error in upload excel file')
             return res.status(500).json({message : 'Uploading File Failed.'})
         }
 }

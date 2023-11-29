@@ -6,6 +6,7 @@ const router = require('./routes/employee')
 const app = express()
 app.use(cors())
 app.use('/', router)
+app.use(express.static(__dirname));
 
 require('dotenv').config()
 const PORT = process.env.PORT || 3000
